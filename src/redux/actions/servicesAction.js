@@ -10,12 +10,12 @@ export const fetchServises = () => ({
 
 export const servicesRequestSuccess = items => ({
 	type: SERVICES_REQUEST_SUCCESS,
-	payload: items,
+	payload: { items },
 });
 
 export const servicesRequestError = error => ({
 	type: SERVICES_REQUEST_FAILURE,
-	payload: error,
+	payload: { error },
 });
 
 

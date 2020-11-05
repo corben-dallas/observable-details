@@ -6,7 +6,7 @@ const initialState = {
 	error: '',
 }
 
-const sevicesReducer = (state = initialState, action) => {
+const servicesReducer = (state = initialState, action) => {
 	switch (action.type) {
 		case FETCH_SEVICES: 
 			return { ...state, isLoading: true, error: '' };
@@ -15,6 +15,7 @@ const sevicesReducer = (state = initialState, action) => {
 			return { ...state, items, isLoading: false };
 		case SERVICES_REQUEST_FAILURE:
 			const { error } = action.payload;
+			console.log('error', error);
 			return { ...state, error, items: [], isLoading: false}
 		case INIT_FETCH:
 		default:
@@ -22,4 +23,4 @@ const sevicesReducer = (state = initialState, action) => {
 	}
 };
 
-export default sevicesReducer;
+export default servicesReducer;
